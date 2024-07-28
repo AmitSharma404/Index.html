@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-200 flex justify-center">
+    <div class="bg-gray-500 w-[360px] h-[430px] text-center mt-20 p-4 pt-0 rounded-md shadow-black shadow-md">
+        <h6 class="p-0 font-medium">Simple Calculator</h6>
+        <input type="text" readonly id="Display" class="w-[100%] h-14 rounded-md bg-gray-950 outline-none p-3 text-white text-3xl align-middle text-right font-bold max-h-16 overflow-y-scroll placeholder:text-left" placeholder="Calculate">
+        <div class="bg-slate-700/70 w-[100%] h-[312px] mt-4 rounded-lg text-center p-3 leading-[4.6] justify- align-middle">
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('1')">1</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('2')">2</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('3')">3</button>
+            <button class="bg-slate-950 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('+')">+</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('4')">4</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('5')">5</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950"onclick="appendToDisplay('6')">6</button>
+            <button class="bg-slate-950 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('-')">-</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('7')">7</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('8')">8</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900
+            active:bg-slate-950" onclick="appendToDisplay('9')">9</button>
+            <button class="bg-slate-950 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-1 hover:bg-slate-900
+            active:bg-slate-950"onclick="appendToDisplay('*')">×</button>
+            <button class="bg-gray-950/95 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-0 hover:bg-slate-900
+            active:bg-slate-950"onclick="clearDisplay()">C</button>
+            <button class="bg-slate-800 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-0 hover:bg-slate-900 active:bg-slate-950"onclick="appendToDisplay('0')">0</button>
+            <button class="bg-slate-950/90 w-11 h-14 font-semibold text-3xl font-mono text-white rounded-md m-0 hover:bg-slate-900 active:bg-slate-950" onclick="appendToDisplay('.')">.</button>
+            <button class="bg-slate-950 w-10 h-14 font-semibold text-3xl font-mono text-white rounded-md m-0  hover:bg-slate-900 active:bg-slate-950"onclick="appendToDisplay('/')">÷</button>
+            <button class="bg-slate-950 w-16 h-14 font-semibold text-3xl font-mono text-white rounded-md m-0  hover:bg-slate-900 active:bg-slate-950"onclick="calculate()">=</button>
+            
+            
+        </div>
+        <h6 direction="right"  class="font-medium text-sm text-gray-900 opacity-25"> &copy Amit Sharma</h6>
+    </div>
+    <script>
+        const Display = document.getElementById("Display");
+        function appendToDisplay(input) {
+            Display.value += input;
+        }
+
+        function clearDisplay() {
+            Display.value = "";
+        }
+        function calculate() {
+            try{
+                Display.value = eval(Display.value)
+            }
+            catch(error){
+                Display.value = (error);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
